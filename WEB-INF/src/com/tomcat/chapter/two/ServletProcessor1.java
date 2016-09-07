@@ -31,7 +31,7 @@ public class ServletProcessor1 {
 		try {
 			URL[] urls = new URL[1];
 			URLStreamHandler streamHandler = null;
-			File classPath = new File(Constants.WEB_ROOT);
+			File classPath = new File("D:/workspace/HowTomcatWorks/WEB-INF/classes/com/tomcat/chapter/two/");
 			String repository = (new URL("file", null, 
 					classPath.getCanonicalPath() + File.separator)).toString();
 			urls[0] = new URL(null, repository, streamHandler);
@@ -41,7 +41,7 @@ public class ServletProcessor1 {
 		}
 		Class myClass =null;
 		try {
-			myClass =loader.loadClass(servletName);
+			myClass = loader.loadClass("com.tomcat.chapter.two." + servletName);
 		} catch(ClassNotFoundException e) {
 			System.out.println(e.toString());
 		}

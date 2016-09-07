@@ -59,6 +59,12 @@ public class Response implements ServletResponse {
 			}
 		}
 	}
+	
+	public PrintWriter getWriter() throws IOException {
+		writer = new PrintWriter(output, true);
+		return writer;
+	}
+	
 	/* (non-Javadoc)
 	 * @see javax.servlet.ServletResponse#flushBuffer()
 	 */
@@ -104,14 +110,6 @@ public class Response implements ServletResponse {
 	 */
 	@Override
 	public ServletOutputStream getOutputStream() throws IOException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	/* (non-Javadoc)
-	 * @see javax.servlet.ServletResponse#getWriter()
-	 */
-	@Override
-	public PrintWriter getWriter() throws IOException {
 		// TODO Auto-generated method stub
 		return null;
 	}
